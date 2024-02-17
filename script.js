@@ -23,10 +23,22 @@ myLibrary.push(book3);
 function addBookToLibrary(){
     
 }
+const card = document.createElement('div');
+card.textContent = "test";
+const rootElemento=document.querySelector(".container");
+rootElemento.append(card);
+
+
 
 
 function displayBook (){
-    myLibrary.forEach((element) => console.log(element));
+    for (let x = 0; x < myLibrary.length(); x++){
+        for (const element in book1) {
+            
+        };
+        console.log(element);
+    }
+   
         
     };
 
