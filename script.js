@@ -15,30 +15,35 @@ function Book(title, author, pages, isRead ){
 const book1 = new Book('Roots',"rootsie", 450, 'yes');
 const book2 = new Book('Roots',"rootsie", 300, 'yes');
 const book3 = new Book('Roots',"rootsie", 50, 'no');
+const book4 = new Book('Roots',"rootsie", 50, 'no');
+const book34 = new Book('Roots',"rootsie", 50, 'no');
+const book344 = new Book('Roots',"rootsie", 50, 'no');
 
-myLibrary.push(book1);
-myLibrary.push(book2);
-myLibrary.push(book3);
+
+
 
 function addBookToLibrary(){
-    
+    myLibrary.push(book1);
 }
-const card = document.createElement('div');
-card.textContent = "test";
-const rootElemento=document.querySelector(".container");
-rootElemento.append(card);
+const BtnAdd =  document.querySelector(".btn-add");
+BtnAdd.addEventListener("click", addCard);
+function addCard(){
+    const card = document.createElement('div');
+    card.classList.toggle('card')
+    console.log("add ");
+    const rootElemento=document.querySelector(".container");
+    rootElemento.appendChild(card);
+    addBookToLibrary();
+}
 
 
 
 
 function displayBook (){
-    for (let x = 0; x < myLibrary.length(); x++){
-        for (const element in book1) {
-            
-        };
-        console.log(element);
-    }
-   
+
+    myLibrary.forEach((element)=> addCard(element)
         
+    );
     };
+    displayBook();
 
