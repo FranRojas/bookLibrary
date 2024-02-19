@@ -1,5 +1,10 @@
 
-const myLibrary = [];
+const book1 = new Book('Roots',"rootsie", 450, 'yes');
+const book2 = new Book('Pride and Prejudice',"don", 300, 'yes');
+const book3 = new Book('How to think',"smartAI", 50, 'no');
+
+const myLibrary = [book1, book2, book3];
+const rootElemento=document.querySelector(".display");
 
 
 
@@ -12,38 +17,44 @@ function Book(title, author, pages, isRead ){
         return `The ${title} written by ${author} has ${pages} pages, ${isRead} `;
     }
 }
-const book1 = new Book('Roots',"rootsie", 450, 'yes');
-const book2 = new Book('Roots',"rootsie", 300, 'yes');
-const book3 = new Book('Roots',"rootsie", 50, 'no');
-const book4 = new Book('Roots',"rootsie", 50, 'no');
-const book34 = new Book('Roots',"rootsie", 50, 'no');
-const book344 = new Book('Roots',"rootsie", 50, 'no');
+
 
 
 
 
 function addBookToLibrary(){
-    myLibrary.push(book1);
+    myLibrary.push(book344);
+    myLibrary.push(book34);
+    console.log("add ");
+   5
 }
 const BtnAdd =  document.querySelector(".btn-add");
-BtnAdd.addEventListener("click", addCard);
-function addCard(){
-    const card = document.createElement('div');
-    card.classList.toggle('card')
-    console.log("add ");
-    const rootElemento=document.querySelector(".container");
-    rootElemento.appendChild(card);
-    addBookToLibrary();
-}
+//BtnAdd.addEventListener("click", addBookToLibrary);
 
 
 
 
 function displayBook (){
+   rootElemento.innerHTML = `
+   <div>
+    ${myLibrary.map(function(book){
+        return  `
+        <div class= card>
+        <p> ${book.title}  </p>
+        <p> ${book.author }  </p>
+        <p> ${book.pages}  </p>
+        <p> ${book.isRead}  </p>
+       
+        </div>
+        `
+    }).join('')}
+   
+   </div> 
 
-    myLibrary.forEach((element)=> addCard(element)
-        
-    );
-    };
-    displayBook();
+   <p> These ${myLibrary.length} books have been added recently </p>
+   `
+
+    
+}
+BtnAdd.addEventListener("click", displayBook);
 

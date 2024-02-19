@@ -8,10 +8,21 @@ body {
 }
 .container{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     min-height: 100vh;
+    color: aliceblue;
+}
+.display{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    margin: 25px;
+    padding: 10px;
     color: aliceblue;
 }
 .card{
